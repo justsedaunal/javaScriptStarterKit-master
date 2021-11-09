@@ -18,7 +18,7 @@ function findPrime(...numbers) {
             result.push("asal değil : " + number)
         }
 
-        
+
 
     });
 
@@ -46,4 +46,98 @@ function primeNumber(number) {
 
 }
 
-console.log(findPrime(1, 5, 2, 8))
+console.log(findPrime(13, 5, 2, 8))
+
+//----------------------------------------------------------------------
+
+// Parametre olarak girilen iki sayının arkadaş sayılar olup olmadığını bulan programı yazınız. 
+//(Arkadaş sayılar için google)
+
+
+function isFriendNumber(number1, number2) {
+    let total1 = 0
+    let total2 = 0
+
+
+
+    for (let i = 1; i < number1; i++) {
+        if (number1 % i == 0) {
+            total1 = total1 + i
+        }
+
+    }
+
+    for (let i = 1; i < number2; i++) {
+        if (number2 % i == 0) {
+            total2 = total2 + i
+        }
+    }
+    if (number1 == total2 && number2 == total1) {
+        console.log("Bu sayılar arkadaş sayılardır")
+
+    }
+    else {
+        console.log("Bu sayılar arkadaş sayılar değildir.")
+    }
+
+
+
+}
+//isFriendNumber (220,284)
+
+//-----------------------------------------------------------
+
+//1000'e kadarki tüm mükemmel sayıları listeleyen programı yazınız.
+
+function is_perfect() {
+    for (let i = 1; i <= 1000; i++) {
+
+        let temp = 0;
+        for (let j = 0; j < i; j++) {
+
+            if (i % j == 0) {
+                temp += j;
+            }
+        }
+
+        if (i == temp) {
+            console.log(i + "It is a perfect number.");
+        }
+        else {
+            console.log("It is not a perfect number.");
+        }
+
+    }
+
+}
+is_perfect();
+
+
+
+//1000'e kadarki tüm asal sayıları listeleyen programı yazınız.
+
+
+function listOfPrimes (){
+    for (let i = 2;   i< 1000;  i++) {
+if (primeNumber(i)==true) {
+    console.log(i+ " asal sayısı")
+    
+}        
+    }
+}
+listOfPrimes()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
