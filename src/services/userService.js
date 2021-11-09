@@ -1,13 +1,19 @@
 export default class UserService {
-    add(user){
-        console.log("kullanıcı eklendi" + user)
+    constructor(loggerService) {
+        this.users = []
+        this.loggerService = loggerService
     }
 
-    list(){
-        console.log("kullanıcı listelendi")
+    add(user) {
+        this.users.push(user)
+        this.loggerService.log(user)
     }
 
-    getById(id){
-        console.log("kullanıcı detayı getirildi")
+    list() {
+        return this.users
+    }
+
+    getById(id) {
+        return this.users.find(u => u.id === id)
     }
 }
